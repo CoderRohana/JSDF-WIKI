@@ -1,0 +1,375 @@
+/* Base Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+
+:root {
+    --primary-color: #003366;
+    /* Navy blue - traditional JSDF color */
+    --secondary-color: #8b0000;
+    /* Deep red for accents */
+    --light-accent: #f5f5f5;
+    /* Light gray for backgrounds */
+    --dark-accent: #333333;
+    /* Dark gray for text */
+    --border-color: #cccccc;
+    /* Border color */
+}
+
+body {
+    background-color: #f0f0f0;
+    color: var(--dark-accent);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#logo {
+    max-width: 150px;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission Statement Box */
+.mission-statement {
+    background-color: var(--light-accent);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.mission-statement h3 {
+    margin-top: 0;
+}
+
+/* Grid Container for Equipment Display */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.grid-item {
+    background-color: var(--light-accent);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.grid-item h4 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.grid-item p {
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--light-accent);
+}
+
+address {
+    font-style: normal;
+}
+
+address a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+}
+
+/* Military-Style Decorative Elements */
+section::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 50px;
+    background-color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Medium screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Military-themed buttons and links */
+.military-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.military-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Special Decorative Elements */
+.section-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header::after {
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--border-color);
+    margin-left: 1rem;
+}
+
+/* Top Navigation Badge */
+.nav-badge {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: top;
+}
+
+/* Table Styling for Data */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+table th,
+table td {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--light-accent);
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+}
+
+/* Enhanced for the specific military theme */
+#about,
+#maritime,
+#air,
+#ground,
+#technology {
+    border-top: 5px solid var(--primary-color);
+}
+
+#maritime {
+    border-top-color: #00416A;
+    /* Naval blue */
+}
+
+#air {
+    border-top-color: #4682B4;
+    /* Sky blue */
+}
+
+#ground {
+    border-top-color: #556B2F;
+    /* Army green */
+}
+
+#technology {
+    border-top-color: #708090;
+    /* Steel gray */
+}
